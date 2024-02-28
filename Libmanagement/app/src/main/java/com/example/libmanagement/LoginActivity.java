@@ -2,7 +2,9 @@ package com.example.libmanagement;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -13,8 +15,13 @@ import android.widget.Toast;
 import org.w3c.dom.Text;
 
 public class LoginActivity extends AppCompatActivity {
-    String userName,passWord;
+    String userName, passWord;
+    Intent intent;
+    SharedPreferences sp;
+    SharedPreferences.Editor ed;
+    boolean isSuccess = false;
     private static final String TAG = LoginActivity.class.getSimpleName();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,19 +33,40 @@ public class LoginActivity extends AppCompatActivity {
 
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view)
-            {
+            public void onClick(View view) {
+                isSuccess = false;
+
                 userName = editText_Name.getText().toString();
                 passWord = editText_Password.getText().toString();
-                Log.i(TAG,userName);
-                Intent intent = new Intent(LoginActivity.this, BookListActivity.class);
-                startActivity(intent);
+                if (userName.toString().equals("student") && passWord.toString().equals("student")) {
+                    intent = new Intent(LoginActivity.this, BookListActivity.class);
+                    isSuccess = true;
+                } else if (userName.toString().equals("admin") && passWord.toString().equals("admin")) {
+                    intent = new Intent(LoginActivity.this, BookManageActivity.class);
+                    isSuccess = true;
+                } else {
+                    Toast.makeText(getApplicationContext(), "Enter correct credentials", Toast.LENGTH_SHORT).show();
+                }
+                if (isSuccess) {
+                    sp = getSharedPreferences("userdata", Context.MODE_PRIVATE);
+
+                    ed = sp.edit();
+                    ed.putString("username", userName);
+
+                    ed.commit();
+                    startActivity(intent);
+                }else {
+                    sp = getSharedPreferences("userdata", Context.MODE_PRIVATE);
+                    ed = sp.edit();
+                    ed.clear();
+                    ed.apply();
+                    finish();
+                }
             }
         });
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view)
-            {
+            public void onClick(View view) {
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
             }
