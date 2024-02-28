@@ -13,22 +13,10 @@
         android:theme="@style/Theme.LibManagement"
         tools:targetApi="31">
         <activity
-            android:name=".RegistrationActivity"
-            android:exported="false" />
+            android:name=".MainActivity"
+            android:exported="false"/>
         <activity
             android:name=".LoginActivity"
-            android:exported="true"></activity>
-
-        <activity
-            android:name=".BookListActivity"
-            android:exported="false"></activity>
-        <activity
-            android:name=".BookManageActivity"
-            android:exported="false">
-            />
-        </activity>
-        <activity
-            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,6 +24,29 @@
             </intent-filter>
             />
         </activity>
-    </application>
-
+        <activity
+            android:name=".RegistrationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BookListActivity"
+            android:exported="false"></activity>
+        <activity
+            android:name=".BookRequestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BookReturnActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BookManageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BookAddActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BookEditActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BookDeleteActivity"
+            android:exported="false" />
+       </application>
 </manifest>

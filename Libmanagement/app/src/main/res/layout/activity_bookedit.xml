@@ -5,20 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bookview"
-    tools:context=".BookRequestActivity">
+    tools:context=".BookEditActivity">
 
     <Button
-        android:id="@+id/btn_request"
+        android:id="@+id/btn_update"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="308dp"
         android:background="@drawable/custombutton"
-        android:text="Request"
+        android:text="Update"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.438"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.712" />
+        app:layout_constraintTop_toBottomOf="@+id/edtxt_category"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/btn_back"
@@ -35,58 +36,55 @@
 
     <EditText
         android:id="@+id/edtxt_name"
-        android:layout_width="378dp"
-        android:layout_height="84dp"
+        android:layout_width="331dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="136dp"
         android:ems="10"
         android:inputType="text"
-        android:text="Book Name/Code"
-        app:layout_constraintBottom_toTopOf="@+id/btn_request"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.465"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.152" />
+        android:text="Book Name"
+        app:layout_constraintEnd_toEndOf="@+id/edtxt_code"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/edtxt_code"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/edtxt_category"
-        android:layout_width="358dp"
-        android:layout_height="76dp"
-        android:layout_marginTop="52dp"
+        android:layout_width="331dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="136dp"
         android:layout_marginEnd="28dp"
         android:ems="10"
-        android:enabled="false"
         android:inputType="text"
-        android:text="Student Name(Auto filled)"
-        app:layout_constraintEnd_toEndOf="@+id/edtxt_name"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/edtxt_name"
-
+        android:text="Category"
+        app:layout_constraintEnd_toEndOf="@+id/editTextPhone"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextPhone"
         app:layout_constraintTop_toBottomOf="@+id/edtxt_name" />
 
     <EditText
+        android:id="@+id/edtxt_code"
+        android:layout_width="331dp"
+        android:layout_height="69dp"
+        android:layout_marginBottom="128dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Code"
+        app:layout_constraintBottom_toTopOf="@+id/editTextPhone"
+        app:layout_constraintEnd_toEndOf="@+id/edtxt_category"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/edtxt_category" />
+
+    <EditText
         android:id="@+id/editTextPhone"
-        android:layout_width="351dp"
-        android:layout_height="86dp"
-        android:layout_marginBottom="40dp"
+        android:layout_width="331dp"
+        android:layout_height="69dp"
+        android:layout_marginBottom="28dp"
         android:ems="10"
         android:inputType="text"
         android:text="Department"
-        app:layout_constraintBottom_toTopOf="@+id/btn_request"
-        app:layout_constraintEnd_toEndOf="@+id/editTextDate2"
-        app:layout_constraintStart_toStartOf="@+id/editTextDate2" />
-
-    <EditText
-        android:id="@+id/editTextDate2"
-        android:layout_width="351dp"
-        android:layout_height="86dp"
-        android:layout_marginBottom="64dp"
-        android:ems="10"
-        android:inputType="date"
-        android:text="Reqeest Date"
-        app:layout_constraintBottom_toTopOf="@+id/editTextPhone"
-        app:layout_constraintEnd_toEndOf="@+id/edtxt_category"
-        app:layout_constraintHorizontal_bias="0.45"
-        app:layout_constraintStart_toStartOf="@+id/edtxt_category" />
-
+        app:layout_constraintBottom_toTopOf="@+id/edtxt_category"
+        app:layout_constraintEnd_toEndOf="@+id/edtxt_name"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/edtxt_name" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

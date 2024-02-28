@@ -25,73 +25,50 @@ import java.util.UUID;
 
 public class BookManageActivity extends AppCompatActivity {
     private static final String TAG = BookManageActivity.class.getSimpleName();
-    Cursor cursor;
-
-    SQLiteDatabase db;
-    Bitmap bitmap;
-    ImageView selectedBookImage;
-
-    // constant to compare
-    // the activity result code
-    int SELECT_PICTURE = 200;
-
-    @Override
+       @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_manage);
-        Drawable drawable = getResources().getDrawable(R.drawable.bookicon);
-        bitmap = ((BitmapDrawable) drawable).getBitmap();
-        Button btn_save = findViewById(R.id.btn_save);
-       // selectedBookImage = findViewById(R.id.book_image);
-//        try {
-//            database = new BookDBProcess();
-//            db = database.DbCreateDB();
-//        } catch (Exception e) {
-//            Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_LONG).show();
-//        }
-        btn_save.setOnClickListener(new View.OnClickListener() {
+      //  Button btn_view= findViewById(R.id.btn_view);
+        Button btn_add = findViewById(R.id.btn_add);
+        Button btn_update = findViewById(R.id.btn_update);
+        Button btn_delete = findViewById(R.id.btn_delete);
+        Button btn_logout = findViewById(R.id.btn_logout);
+
+//        btn_view.setOnClickListener(new View.OnClickListener() {
+//               @Override
+//               public void onClick(View view) {
+//                //   Intent intent = new Intent(BookManageActivity.this, BookListActivity.class);
+//                 //  startActivity(intent);
+//               }
+//           });
+        btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                ContextWrapper cw = new ContextWrapper(getApplicationContext());
-//                File directory = cw.getDir("imageDir", Context.MODE_PRIVATE);
-//                String uniqueID = UUID.randomUUID().toString();
-//                Long tsLong = System.currentTimeMillis() / 1000;
-//                String fileName = uniqueID + "-" + tsLong.toString();
-//                File file = new File(directory, fileName.toString() + ".jpg");
-//                if (!file.exists()) {
-//                    Log.d("path", file.toString());
-//                    FileOutputStream fos = null;
-//                    try {
-//                        fos = new FileOutputStream(file);
-//                        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos);
-//                        fos.flush();
-//                        fos.close();
-//                    } catch (java.io.IOException e) {
-//                        e.printStackTrace();
-//                    }
-//                }
-                //image load
-                imageChooser();
+                Intent intent = new Intent(BookManageActivity.this, BookAddActivity.class);
+                startActivity(intent);
             }
         });
-    }
-
-    void imageChooser() {
-        Intent i = new Intent();
-        i.setType("image/*");
-        i.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(Intent.createChooser(i, "Select Picture"), SELECT_PICTURE);
-    }
-
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == RESULT_OK) {
-            if (requestCode == SELECT_PICTURE) {
-                Uri selectedImageUri = data.getData();
-                if (null != selectedImageUri) {
-                   // selectedBookImage.setImageURI(selectedImageUri);
-                }
+        btn_update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(BookManageActivity.this, BookEditActivity.class);
+                startActivity(intent);
             }
-        }
+        });
+        btn_delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(BookManageActivity.this, BookDeleteActivity.class);
+                startActivity(intent);
+            }
+        });
+        btn_logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(BookManageActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
