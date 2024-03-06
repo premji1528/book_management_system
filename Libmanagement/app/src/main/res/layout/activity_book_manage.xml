@@ -50,17 +50,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-<!--    <Button-->
-<!--        android:id="@+id/btn_view"-->
-<!--        android:layout_width="346dp"-->
-<!--        android:layout_height="66dp"-->
-<!--        android:layout_marginBottom="44dp"-->
-<!--        android:text="Book List"-->
-<!--        android:-->
-<!--        android:background="@drawable/custombutton"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/btn_add"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.465"-->
-<!--        app:layout_constraintStart_toStartOf="parent" />-->
+    <Button
+        android:id="@+id/btn_view"
+        android:layout_width="346dp"
+        android:layout_height="66dp"
+        android:layout_marginBottom="44dp"
+        android:text="Book List"
+        android:background="@drawable/custombutton"
+        app:layout_constraintBottom_toTopOf="@+id/btn_add"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.465"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

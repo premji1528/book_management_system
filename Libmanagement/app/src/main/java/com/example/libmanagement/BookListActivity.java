@@ -14,9 +14,8 @@ import android.widget.Toast;
 
 public class BookListActivity extends AppCompatActivity {
 
-//    SharedPreferences sp = getSharedPreferences("userdata", Context.MODE_PRIVATE);
-//    SharedPreferences.Editor ed= sp.edit();
     String userName;
+    SharedPreferences sp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,12 +52,25 @@ public class BookListActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 Toast.makeText(getApplicationContext(),"You Selected "+bookNames[position]+ " as Book",Toast.LENGTH_SHORT).show();        }
         });
+        sp = getSharedPreferences("userdata", Context.MODE_PRIVATE);
+        userName = (sp.getString("username", ""));
+        if(userName.equals("admin")) {
+            btn_login.setText("Back");
+            btn_request.setVisibility(View.GONE);
+            btn_return.setVisibility(View.GONE);
+        }
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
             {
-                Intent intent = new Intent(BookListActivity.this, LoginActivity.class);
-                startActivity(intent);
+                if(userName.equals("admin")) {
+                    Intent intent = new Intent(BookListActivity.this, BookManageActivity.class);
+                    startActivity(intent);
+                }else {
+                    Intent intent = new Intent(BookListActivity.this, LoginActivity.class);
+                    startActivity(intent);
+                }
+
             }
         });
         btn_request.setOnClickListener(new View.OnClickListener() {

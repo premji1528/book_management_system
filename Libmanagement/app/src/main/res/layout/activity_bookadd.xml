@@ -37,52 +37,54 @@
         android:id="@+id/edtxt_name"
         android:layout_width="331dp"
         android:layout_height="69dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="92dp"
         android:ems="10"
+        android:hint="Book Name"
         android:inputType="text"
-        android:text="Book Name"
         app:layout_constraintEnd_toEndOf="@+id/edtxt_category"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/edtxt_category"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/edtxt_category"
-        android:layout_width="331dp"
-        android:layout_height="69dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="28dp"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Category"
-        app:layout_constraintEnd_toEndOf="@+id/edtxt_name"
-        app:layout_constraintHorizontal_bias="0.85"
-        app:layout_constraintStart_toStartOf="@+id/edtxt_name"
-        app:layout_constraintTop_toBottomOf="@+id/edtxt_name" />
 
     <EditText
         android:id="@+id/edtxt_code"
         android:layout_width="331dp"
         android:layout_height="69dp"
         android:ems="10"
+        android:hint="Code"
         android:inputType="text"
-        android:text="Code"
-        app:layout_constraintBottom_toTopOf="@+id/editTextPhone"
+        app:layout_constraintBottom_toTopOf="@+id/edtxt_department"
         app:layout_constraintEnd_toEndOf="@+id/edtxt_category"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/edtxt_category"
         app:layout_constraintTop_toBottomOf="@+id/edtxt_category"
-        app:layout_constraintVertical_bias="0.461" />
+        app:layout_constraintVertical_bias="0.516" />
 
     <EditText
-        android:id="@+id/editTextPhone"
+        android:id="@+id/edtxt_department"
         android:layout_width="331dp"
         android:layout_height="69dp"
-        android:layout_marginBottom="160dp"
+        android:layout_marginBottom="152dp"
         android:ems="10"
+        android:hint="Department"
         android:inputType="text"
-        android:text="Department"
         app:layout_constraintBottom_toTopOf="@+id/btn_add"
         app:layout_constraintEnd_toEndOf="@+id/edtxt_code"
-        app:layout_constraintHorizontal_bias="0.753"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/edtxt_code" />
+
+    <EditText
+        android:id="@+id/edtxt_category"
+        android:layout_width="331dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="28dp"
+        android:ems="10"
+        android:hint="Category"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="@+id/edtxt_name"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/edtxt_name"
+        app:layout_constraintTop_toBottomOf="@+id/edtxt_name" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

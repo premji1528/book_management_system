@@ -35,10 +35,11 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 isSuccess = false;
-
-                userName = editText_Name.getText().toString();
-                passWord = editText_Password.getText().toString();
-                if (userName.toString().equals("student") && passWord.toString().equals("student")) {
+                userName = editText_Name.getText().toString().trim();
+                passWord = editText_Password.getText().toString().trim();
+                if (userName.toString().equals("") || passWord.toString().equals("")) {
+                    Toast.makeText(getApplicationContext(), "Fill all fields", Toast.LENGTH_SHORT).show();
+                } else if (userName.toString().equals("student") && passWord.toString().equals("student")) {
                     intent = new Intent(LoginActivity.this, BookListActivity.class);
                     isSuccess = true;
                 } else if (userName.toString().equals("admin") && passWord.toString().equals("admin")) {
@@ -49,10 +50,8 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 if (isSuccess) {
                     sp = getSharedPreferences("userdata", Context.MODE_PRIVATE);
-
                     ed = sp.edit();
                     ed.putString("username", userName);
-
                     ed.commit();
                     startActivity(intent);
                 }else {
