@@ -11,14 +11,13 @@
         android:id="@+id/btn_update"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="376dp"
         android:background="@drawable/custombutton"
         android:text="Update"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.712" />
+        app:layout_constraintHorizontal_bias="0.422"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btn_back"
@@ -34,57 +33,97 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <EditText
-        android:id="@+id/edtxt_name"
-        android:layout_width="331dp"
-        android:layout_height="69dp"
-        android:layout_marginTop="92dp"
+        android:id="@+id/edtxt_bookcode"
+        android:layout_width="364dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
         android:ems="10"
         android:hint="Book Name"
         android:inputType="text"
-        app:layout_constraintEnd_toEndOf="@+id/edtxt_category"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/edtxt_category"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/edtxt_code"
-        android:layout_width="331dp"
-        android:layout_height="69dp"
-        android:ems="10"
-        android:hint="Code"
-        android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/edtxt_department"
-        app:layout_constraintEnd_toEndOf="@+id/edtxt_category"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/edtxt_category"
-        app:layout_constraintTop_toBottomOf="@+id/edtxt_category"
-        app:layout_constraintVertical_bias="0.516" />
-
-    <EditText
         android:id="@+id/edtxt_department"
-        android:layout_width="331dp"
-        android:layout_height="69dp"
-        android:layout_marginBottom="152dp"
+        android:layout_width="326dp"
+        android:layout_height="72dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="92dp"
         android:ems="10"
         android:hint="Department"
         android:inputType="text"
         app:layout_constraintBottom_toTopOf="@+id/btn_update"
-        app:layout_constraintEnd_toEndOf="@+id/edtxt_code"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/edtxt_code" />
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="139dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="104dp"
+        android:hint="Category"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.058"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtxt_bookcode" />
+
+    <Spinner
+        android:id="@+id/sp_category"
+        android:layout_width="223dp"
+        android:layout_height="69dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/edtxt_department"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
-        android:id="@+id/edtxt_category"
-        android:layout_width="331dp"
-        android:layout_height="69dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="28dp"
+        android:id="@+id/edtxt_bookcode"
+        android:layout_width="187dp"
+        android:layout_height="63dp"
+        android:layout_marginBottom="212dp"
         android:ems="10"
-        android:hint="Category"
+        android:hint="Code"
         android:inputType="text"
-        app:layout_constraintEnd_toEndOf="@+id/edtxt_name"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/edtxt_name"
-        app:layout_constraintTop_toBottomOf="@+id/edtxt_name" />
+        app:layout_constraintBottom_toTopOf="@+id/btn_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.071"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_getbook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="224dp"
+        android:text="Get Book"
+        android:background="@drawable/custombutton"
+        app:layout_constraintBottom_toTopOf="@+id/btn_back"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/edtxt_booktitle"
+        android:layout_width="372dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Book title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtxt_bookcode" />
+
+    <EditText
+        android:id="@+id/edtxt_numberofbooks"
+        android:layout_width="355dp"
+        android:layout_height="57dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="12dp"
+        android:ems="10"
+        android:inputType="number"
+        android:hint="Number of books"
+        app:layout_constraintBottom_toTopOf="@+id/btn_update"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtxt_department"
+        app:layout_constraintVertical_bias="0.521" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

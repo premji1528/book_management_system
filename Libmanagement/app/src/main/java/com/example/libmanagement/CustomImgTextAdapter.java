@@ -11,30 +11,37 @@ import android.widget.TextView;
 public class CustomImgTextAdapter extends ArrayAdapter<String> {
 
     private final Activity context;
-    private final String[] maintitle;
-    private final String[] subtitle;
+    private final String[] bookinfo;
+    private final String[] category;
     private final Integer[] imgid;
 
-    public CustomImgTextAdapter(Activity context, String[] maintitle, String[] subtitle, Integer[] imgid) {
-        super(context, R.layout.row_item, maintitle);        // TODO Auto-generated constructor stub
+    public CustomImgTextAdapter(Activity context, String[] bookinfo, String[] category, Integer[] imgid) {
+        super(context, R.layout.row_item, bookinfo);        // TODO Auto-generated constructor stub
 
         this.context = context;
-        this.maintitle = maintitle;
-        this.subtitle = subtitle;
+        this.bookinfo = bookinfo;
+        this.category = category;
         this.imgid = imgid;
     }
     public View getView(int position, View view, ViewGroup parent) {
         LayoutInflater inflater = context.getLayoutInflater();
         View rowView = inflater.inflate(R.layout.row_item, null, true);
 
-        TextView titleText = (TextView) rowView.findViewById(R.id.title);
+        TextView bookname = (TextView) rowView.findViewById(R.id.bookname);
+        TextView booktitle = (TextView) rowView.findViewById(R.id.booktitle);
+        TextView numberofbooks = (TextView) rowView.findViewById(R.id.numberofbooks);
         ImageView imageView = (ImageView) rowView.findViewById(R.id.icon);
-        TextView subtitleText = (TextView) rowView.findViewById(R.id.subtitle);
+        TextView categoryText = (TextView) rowView.findViewById(R.id.category);
+        TextView bookcode = (TextView) rowView.findViewById(R.id.bookcode);
 
-        titleText.setText(maintitle[position]);
+        String bookDetails[]= bookinfo[position].split("-");
+
+        bookname.setText("Name : " +bookDetails[0]);
+        booktitle.setText("Title : " +bookDetails[1]);
+        bookcode.setText("Code : " +bookDetails[2]);
+        categoryText.setText("Category : " +category[position]);
+        numberofbooks.setText("Numbers : " +bookDetails[3]);
         imageView.setImageResource(imgid[position]);
-        subtitleText.setText(subtitle[position]);
-
         return rowView;
 
     }

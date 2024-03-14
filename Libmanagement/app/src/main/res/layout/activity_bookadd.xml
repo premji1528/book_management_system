@@ -15,10 +15,10 @@
         android:text="Add New"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.249"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.712" />
+        app:layout_constraintVertical_bias="0.837" />
 
     <Button
         android:id="@+id/btn_back"
@@ -29,62 +29,97 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/edtxt_name"
+        android:id="@+id/edtxt_bookcode"
         android:layout_width="331dp"
         android:layout_height="69dp"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="68dp"
         android:ems="10"
         android:hint="Book Name"
         android:inputType="text"
-        app:layout_constraintEnd_toEndOf="@+id/edtxt_category"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/edtxt_category"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/edtxt_code"
         android:layout_width="331dp"
         android:layout_height="69dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="80dp"
         android:ems="10"
         android:hint="Code"
         android:inputType="text"
         app:layout_constraintBottom_toTopOf="@+id/edtxt_department"
-        app:layout_constraintEnd_toEndOf="@+id/edtxt_category"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/edtxt_category"
-        app:layout_constraintTop_toBottomOf="@+id/edtxt_category"
-        app:layout_constraintVertical_bias="0.516" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
         android:id="@+id/edtxt_department"
         android:layout_width="331dp"
         android:layout_height="69dp"
-        android:layout_marginBottom="152dp"
+        android:layout_marginBottom="36dp"
         android:ems="10"
         android:hint="Department"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/btn_add"
+        app:layout_constraintBottom_toTopOf="@+id/edtxt_numberofbooks"
         app:layout_constraintEnd_toEndOf="@+id/edtxt_code"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/edtxt_code" />
 
     <EditText
-        android:id="@+id/edtxt_category"
+        android:id="@+id/edtxt_numberofbooks"
         android:layout_width="331dp"
         android:layout_height="69dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="28dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="52dp"
         android:ems="10"
+        android:hint="Number of books"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/btn_add"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Spinner
+        android:id="@+id/sp_category"
+        android:layout_width="206dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="76dp"
         android:hint="Category"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtxt_bookcode" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="98dp"
+        android:layout_height="41dp"
+        android:layout_marginEnd="296dp"
+        android:layout_marginBottom="32dp"
+        android:hint="Category"
+        app:layout_constraintBottom_toTopOf="@+id/edtxt_code"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/edtxt_title"
+        android:layout_width="325dp"
+        android:layout_height="65dp"
+        android:layout_marginEnd="76dp"
+        android:layout_marginBottom="20dp"
+        android:ems="10"
+        android:hint="Title"
         android:inputType="text"
-        app:layout_constraintEnd_toEndOf="@+id/edtxt_name"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/edtxt_name"
-        app:layout_constraintTop_toBottomOf="@+id/edtxt_name" />
+        app:layout_constraintBottom_toTopOf="@+id/sp_category"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgview_bookimage"
+        android:layout_width="140dp"
+        android:layout_height="109dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="112dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/book" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

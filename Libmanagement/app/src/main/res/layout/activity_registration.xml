@@ -34,7 +34,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <EditText
-        android:id="@+id/edtxt_name"
+        android:id="@+id/edtxt_bookcode"
         android:layout_width="353dp"
         android:layout_height="69dp"
         android:layout_marginTop="68dp"
@@ -58,7 +58,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtxt_name" />
+        app:layout_constraintTop_toBottomOf="@+id/edtxt_bookcode" />
 
     <EditText
         android:id="@+id/edtxt_email"
