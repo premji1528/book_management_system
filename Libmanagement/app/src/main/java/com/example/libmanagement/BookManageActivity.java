@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
@@ -25,23 +26,25 @@ import java.util.UUID;
 
 public class BookManageActivity extends AppCompatActivity {
     private static final String TAG = BookManageActivity.class.getSimpleName();
-       @Override
+    Button btn_add, btn_update, btn_delete, btn_logout,btn_view;
+    String userName;
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_manage);
-      //  Button btn_view= findViewById(R.id.btn_view);
-        Button btn_add = findViewById(R.id.btn_add);
-        Button btn_update = findViewById(R.id.btn_update);
-        Button btn_delete = findViewById(R.id.btn_delete);
-        Button btn_logout = findViewById(R.id.btn_logout);
-
-//        btn_view.setOnClickListener(new View.OnClickListener() {
-//               @Override
-//               public void onClick(View view) {
-//                //   Intent intent = new Intent(BookManageActivity.this, BookListActivity.class);
-//                 //  startActivity(intent);
-//               }
-//           });
+        //  Button btn_view= findViewById(R.id.btn_view);
+        btn_add = findViewById(R.id.btn_add);
+        btn_update = findViewById(R.id.btn_update);
+        btn_delete = findViewById(R.id.btn_delete);
+        btn_logout = findViewById(R.id.btn_logout);
+        btn_view = findViewById(R.id.btn_view);
+        btn_view.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View view) {
+                      Intent intent = new Intent(BookManageActivity.this, BookListActivity.class);
+                       startActivity(intent);
+               }
+           });
         btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

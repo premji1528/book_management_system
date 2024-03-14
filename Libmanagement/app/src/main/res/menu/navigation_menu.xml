@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:title="Category"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        >
+        <menu>
+            <group  android:id="@+id/group1">
+                <item
+                    android:id="@+id/nav_all"
+                    android:title="All Categories" />
+                <item
+                android:id="@+id/nav_cplus"
+                android:icon="@drawable/bookicon"
+                android:title="C++" />
+                <item
+                    android:id="@+id/nav_java"
+                    android:icon="@drawable/bookicon"
+                    android:title="Java" />
+                <item
+                    android:id="@+id/nav_dotnet"
+                    android:icon="@drawable/bookicon"
+
+                    android:title=".Net" />
+                <item
+                    android:id="@+id/nav_webdesigning"
+                    android:icon="@drawable/bookicon"
+                    android:title="Web Designing" />
+                <item
+                    android:id="@+id/nav_mobileapp"
+                    android:icon="@drawable/bookicon"
+                    android:title="MobileApp" />
+            </group>
+        </menu>
+    </item>
+
+</menu>
